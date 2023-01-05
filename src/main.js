@@ -1,7 +1,6 @@
-import './app.css'
-import App from './App.svelte'
+import Page from './components/Home.svelte'
 
-const app = new App({
+const app = new Page({
   target: document.getElementById('app'),
 })
 
