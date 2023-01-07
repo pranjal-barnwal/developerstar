@@ -17,7 +17,9 @@
   },
   "dependencies": {
     "@swc/helpers": "^0.4.14",
+    "emoji.json": "^13.1.0",
     "firebase": "^9.15.0",
-    "parcel": "^2.8.2"
+    "parcel": "^2.8.2",
+    "svelte-navigator": "^3.2.2"
   }
 }
