@@ -7,6 +7,7 @@
   import "../app.css"
   import Cards from "./Cards.svelte";
   import MediaQuery from "svelte-media-query";
+  import { Router, Link, Route } from "svelte-navigator";
 </script>
 
 <style>

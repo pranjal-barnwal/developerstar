@@ -11,7 +11,7 @@
   import FaviconJS from "./favicon.js/favicon.mjs";
   import Emoji2ico from "./components/Emoji2ico.svelte";
   import Home from "./components/Home.svelte";
-
+	import { Router, Link, Route } from "svelte-navigator";
 
   let interns = [];
   
@@ -129,6 +129,24 @@
 </script>
 
 <main>
+
+<Router>
+  <nav>
+		<Link to="/">Home</Link>
+		<Link to="emoji2ico">Emoji</Link>
+		<Link to="text2ico">Text</Link>
+		<Link to="img2ico">Img</Link>
+	</nav>
+  <div>
+		<Route path="/">
+			<Home />
+		</Route>
+		<Route path="text2ico" component={Text2ico} />
+		<Route path="emoji2ico" component={Emoji2ico} />
+		<Route path="img2ico" component={Img2ico} />
+	</div>
+</Router>
+  
   <!-- {#each interns as intern}
     <p>{intern.name}</p>
   {/each}

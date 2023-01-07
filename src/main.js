@@ -1,7 +1,7 @@
-import Page from './components/Home.svelte'
-// import Emoji2ico from "./components/Emoji2ico.svelte";
+import './app.css'
+import App from './App.svelte'
 
-const app = new Page({
+const app = new App({
   target: document.getElementById('app'),
 })
 
