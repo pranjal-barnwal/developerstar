@@ -15,12 +15,13 @@
         background-color: black;
         color:white;
         font-size:1.5rem;
-        padding: 2rem 5rem;
+        padding: 3rem 5rem;
         box-sizing: border-box;
     }
     h1{
         color:#b5b5b5 !important;
         font-size:1.125rem;
+        padding-bottom:2rem;
     }
     p{
         width:50%;
