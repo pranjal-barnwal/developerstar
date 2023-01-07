@@ -11,6 +11,11 @@
     "importsNotUsedAsValues": "error",
     "isolatedModules": true,
     "resolveJsonModule": true,
+    "lib": [
+      "es5",
+      "DOM",
+      "esnext"
+    ],
     /**
      * To have warnings / errors of the Svelte compiler at the
      * correct position, enable source maps by default.

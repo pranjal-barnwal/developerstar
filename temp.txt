@@ -1,0 +1,1863 @@
+<script lang="ts">
+  import FaviconJS from "../favicon.js/favicon.mjs";
+  // /** @type {HTMLCanvasElement} */
+  // // Setup canvas
+  let canvas = <HTMLCanvasElement> document.getElementById("canvas");
+  canvas.width = 128;
+  canvas.height = 128;
+  const context = canvas.getContext("2d");
+
+  // Draw background
+  context.fillStyle = "#d85537";
+  context.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Draw text
+  context.fillStyle = "#FFFFFF";
+  context.font = "100px Helvetica";
+  context.textBaseline = "middle";
+  context.textAlign = "center";
+  const x = canvas.width / 2;
+  const y = canvas.height / 2;
+  context.fillText("F", x, y);
+
+  // Create favicon.ico dataurl
+  const favicon = new FaviconJS(canvas);
+  const dataurl = favicon.ico([16, 32, 48]);
+
+  // Activate the download button
+  const download = document.getElementById("download") as HTMLAnchorElement | null;
+  download.href = dataurl;
+  download.setAttribute("download", "favicon.ico");
+
+</script>
+
+<main>
+  <section class="banner section">
+    <div class="banner_div">
+      <h2 class="banner_header">FAVICON GENERATOR / GENERATE FROM TEXT</h2>
+      <p class="banner_para">
+        Quickly generate your favicon from text by selecting the text, fonts,
+        and colors. Download your favicon in the most up to date formats.
+      </p>
+    </div>
+  </section>
+
+  <section class="preview section">
+    <div class="previewing flexed">
+      <span class="preview_text">Preview</span>
+      <img
+        src="/favicon.ico"
+        alt="Preview1 for favicon"
+        class="preview_img preview_img1"
+      />
+      <img
+        src="/favicon.ico"
+        alt="Preview2 for favicon"
+        class="preview_img preview_img2"
+      />
+      <img
+        src="/favicon.ico"
+        alt="Preview3 for favicon"
+        class="preview_img preview_img3"
+      />
+    </div>
+    <div class="buttons flexed">
+      <a href="https://twitter.com/" class="white_button"
+        ><i class="icon fa-brands fa-twitter" /> Twitter</a
+      >
+      <a href="https://google.com/" class="blue_button"
+        ><i class="icon fa-solid fa-download" /> Download</a
+      >
+    </div>
+  </section>
+
+  <section class="generator section">
+    <div class="box">
+      <h2 class="generator_head">Generate From Text</h2>
+
+      <div class="flexbox_generator">
+        <div class="subbox boxtext">
+          <div class="control">
+            <label for="text" class="label">Text</label>
+            <input id="text" type="text" placeholder="Text" class="input" />
+          </div>
+
+          <div class="control">
+            <label for="background" class="label">Background</label>
+            <select id="background">
+              <option value="square">Square</option>
+              <option value="circle">Circle</option>
+              <option value="rounded">Rounded</option>
+            </select>
+          </div>
+
+          <div class="control">
+            <!--:// Replacint part -->
+            <label for="font-family" class="label"
+              >Font Family (view all on Google Fonts)</label
+            >
+            <select id="font-family" style="width: 100%;">
+              <option> ABeeZee </option><option> Abel </option><option>
+                Abhaya Libre
+              </option><option> Aboreto </option><option>
+                Abril Fatface
+              </option><option> Abyssinica SIL </option><option>
+                Aclonica
+              </option>
+            </select>
+            <!--:// Replacint part -->
+          </div>
+        </div>
+
+        <div class="subbox box_font_col">Font Color</div>
+
+        <div class="subbox box_bg_col">Background Color</div>
+        <canvas id="canvas" width="300" height="200" />
+        <a id="download" href="#">Download</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="install section">
+    <div class="box">
+      <h2 class="generator_head">Installation</h2>
+      <div class="install_para">
+        First, use the download button to download the files listed below. Place
+        the files in the root directory of your website.
+        <ul class="install_list">
+          <li>android-chrome-192x192.png</li>
+          <li>android-chrome-512x512.png</li>
+          <li>apple-touch-icon.png</li>
+          <li>favicon-16x16.png</li>
+          <li>favicon-32x32.png</li>
+          <li>favicon.ico</li>
+          <li>site.webmanifest</li>
+        </ul>
+
+        Next, copy the following link tags and paste them into the head of your
+        HTML.
+
+        <pre class="html_codes">
+  &lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt;
+  &lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"&gt;
+  &lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"&gt;
+  &lt;link rel="manifest" href="/site.webmanifest"&gt;
+  </pre>
+        <a href="https://google.com/" class="blue_button"
+          ><i class="icon fa-regular fa-clipboard" /> Copy</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="faq section">
+    <div class="box">
+      <h3 class="faq_head">Why favicon.io?</h3>
+      <p class="faq_para">
+        Whether you want to generate a favicon from text, from an existing
+        image, or from an emoji we've got you covered. The favicon generator is
+        completely free and extremely easy to use. The generated favicon will
+        work for all browsers and multiple platforms.
+      </p>
+
+      <h3 class="faq_head">Getting started with the favicon generator</h3>
+      <p class="faq_para">
+        The tool above will allow you to generate a favicon from text. Start by
+        choosing one to two letters for the favicon generator. Since the favicon
+        generator outputs very small images it's important to use few characters
+        for maximum legibility. Once cool feature with this favicon generator is
+        that you can copy and paste both unicode characters and emojis into the
+        text box. This is useful for when an emoji isn't listed on the emoji
+        favicon page. <a href="https://www.google.com" class="faq_link"
+          >Here's an example keeping it 💯</a
+        >
+      </p>
+
+      <h3 class="faq_head">Making the background simple</h3>
+      <p class="faq_para">
+        Next, select the shape of the background. There are three simple shapes
+        available: square, circle, and rounded. These are the most common shapes
+        used to generate a favicon. You can see examples of these shapes with <a
+          href="https://www.google.com"
+          class="faq_link">ProductHunt</a
+        >, <a href="https://www.google.com" class="faq_link">IndieHackers</a>,
+        and <a href="https://www.google.com" class="faq_link">HackerNews</a>.
+      </p>
+
+      <h3 class="faq_head">Selecting the font for your favicon</h3>
+      <p class="faq_para">
+        The favicon generator uses <a
+          href="https://www.google.com"
+          class="faq_link">Google Fonts</a
+        > which has 800+ fonts available. This is useful to match the font used on
+        your own website. In the future there will be a dedicated font page to help
+        you select your font. It will have filters for languages, styles, and commonly
+        used fonts. You can edit the font size once you've selected your font. Try
+        to take up as much space as possible.
+      </p>
+
+      <h3 class="faq_head">Tailoring the colors</h3>
+      <p class="faq_para">
+        The last step is to select the colors. If you have the HEX values of the
+        colors you want then you can just enter them into the input box.
+        Otherwise you can use some of the colors that we suggest using the color
+        picker below each input box. One cool feature is that you can use
+        transparent backgrounds. Simply type "transparent" into the background
+        color box. <a href="https://www.google.com" class="faq_link"
+          >Here's an example of a favicon generated with a transparent
+          background.</a
+        >
+      </p>
+    </div>
+  </section>
+</main>
+
+<style>
+  #canvas {
+    width: 64px;
+    height: 64px;
+    border: 1px solid red;
+  }
+  .section {
+    padding: 3% 10%;
+  }
+
+  .banner {
+    background: black;
+    color: #fff;
+  }
+
+  .banner_header {
+    color: #b5b5b5;
+    /* letter-spacing: .001rem; */
+    letter-spacing: -0.07ch;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  .banner_para {
+    padding-top: 30px;
+    font-size: 1.9rem;
+    font-weight: bold;
+    max-width: 60%;
+    line-height: 130%;
+  }
+
+  .flexed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .preview {
+    padding: 2% 10%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .preview_text {
+    font-weight: bold;
+    color: #363636;
+    margin-right: 8px;
+  }
+
+  .preview_img {
+    margin-left: 10px;
+  }
+  .preview_img1 {
+    width: 48px;
+  }
+  .preview_img2 {
+    width: 32px;
+  }
+  .preview_img3 {
+    width: 16px;
+  }
+
+  .icon {
+    margin-right: 5px;
+  }
+  .white_button {
+    background: white;
+    color: #363636;
+    font-weight: bold;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    padding: 8px 15px;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  .white_button:hover {
+    border-color: slategray;
+  }
+
+  .blue_button {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 9px 15px;
+    border-radius: 6px;
+    background: #3188be;
+    color: white;
+  }
+  .blue_button:hover {
+    background: #3488ce;
+  }
+
+  .box {
+    border-radius: 12px;
+    padding: 20px 40px;
+    /* border: 1px solid slategray; */
+    box-shadow: 2px 12px 50px rgba(145, 147, 148, 0.219);
+  }
+
+  .generator_head {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #363636;
+  }
+
+  .flexbox_generator {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .subbox {
+    border: 1px solid gray;
+    width: 30%;
+  }
+
+  .install .box {
+    max-width: 65%;
+    color: #4a4a4a;
+    font-size: 0.95rem;
+  }
+
+  .install_list {
+    margin: 10px 20px;
+    line-height: 1.9rem;
+  }
+
+  .html_codes {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background: #ededed;
+    border-radius: 12px;
+    padding: 15px;
+  }
+  .install .blue_button {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .faq .box {
+    max-width: 65%;
+    color: #4a4a4a;
+    font-size: 0.95rem;
+    padding-bottom: 30px;
+  }
+  .faq_head {
+    padding-top: 32px;
+    padding-bottom: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4a4a4a;
+  }
+  .faq_para {
+    font-size: 0.93rem;
+    color: #4a4a4a;
+  }
+
+  .faq_link {
+    text-decoration: none;
+    color: #485fc7;
+  }
+  .faq_link:hover {
+    color: #001b92;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <label for="font-family" class="label"
+              >Font Family (view all on Google Fonts)</label
+            >
+            <select id="font-family" style="width: 100%;">
+              <option> ABeeZee </option><option> Abel </option><option>
+                Abhaya Libre
+              </option><option> Aboreto </option><option>
+                Abril Fatface
+              </option><option> Abyssinica SIL </option><option>
+                Aclonica
+              </option><option> Acme </option><option> Actor </option><option>
+                Adamina
+              </option><option> Advent Pro </option><option>
+                Aguafina Script
+              </option><option> Akaya Kanadaka </option><option>
+                Akaya Telivigala
+              </option><option> Akronim </option><option>
+                Akshar
+              </option><option> Aladin </option><option> Alata </option><option>
+                Alatsi
+              </option><option> Albert Sans </option><option>
+                Aldrich
+              </option><option> Alef </option><option> Alegreya </option><option
+              >
+                Alegreya SC
+              </option><option> Alegreya Sans </option><option>
+                Alegreya Sans SC
+              </option><option> Aleo </option><option>
+                Alex Brush
+              </option><option> Alexandria </option><option>
+                Alfa Slab One
+              </option><option> Alice </option><option> Alike </option><option>
+                Alike Angular
+              </option><option> Alkalami </option><option>
+                Allan
+              </option><option> Allerta </option><option>
+                Allerta Stencil
+              </option><option> Allison </option><option>
+                Allura
+              </option><option> Almarai </option><option>
+                Almendra
+              </option><option> Almendra Display </option><option>
+                Almendra SC
+              </option><option> Alumni Sans </option><option>
+                Alumni Sans Collegiate One
+              </option><option> Alumni Sans Inline One </option><option>
+                Alumni Sans Pinstripe
+              </option><option> Amarante </option><option>
+                Amaranth
+              </option><option> Amatic SC </option><option>
+                Amethysta
+              </option><option> Amiko </option><option> Amiri </option><option>
+                Amiri Quran
+              </option><option> Amita </option><option> Anaheim </option><option
+              >
+                Andada Pro
+              </option><option> Andika </option><option>
+                Anek Bangla
+              </option><option> Anek Devanagari </option><option>
+                Anek Gujarati
+              </option><option> Anek Gurmukhi </option><option>
+                Anek Kannada
+              </option><option> Anek Latin </option><option>
+                Anek Malayalam
+              </option><option> Anek Odia </option><option>
+                Anek Tamil
+              </option><option> Anek Telugu </option><option>
+                Angkor
+              </option><option> Annie Use Your Telescope </option><option>
+                Anonymous Pro
+              </option><option> Antic </option><option>
+                Antic Didone
+              </option><option> Antic Slab </option><option>
+                Anton
+              </option><option> Antonio </option><option>
+                Anybody
+              </option><option> Arapey </option><option>
+                Arbutus
+              </option><option> Arbutus Slab </option><option>
+                Architects Daughter
+              </option><option> Archivo </option><option>
+                Archivo Black
+              </option><option> Archivo Narrow </option><option>
+                Are You Serious
+              </option><option> Aref Ruqaa </option><option>
+                Aref Ruqaa Ink
+              </option><option> Arima </option><option>
+                Arima Madurai
+              </option><option> Arimo </option><option>
+                Arizonia
+              </option><option> Armata </option><option>
+                Arsenal
+              </option><option> Artifika </option><option> Arvo </option><option
+              >
+                Arya
+              </option><option> Asap </option><option>
+                Asap Condensed
+              </option><option> Asar </option><option> Asset </option><option>
+                Assistant
+              </option><option> Astloch </option><option> Asul </option><option>
+                Athiti
+              </option><option> Atkinson Hyperlegible </option><option>
+                Atma
+              </option><option> Atomic Age </option><option>
+                Aubrey
+              </option><option> Audiowide </option><option>
+                Autour One
+              </option><option> Average </option><option>
+                Average Sans
+              </option><option> Averia Gruesa Libre </option><option>
+                Averia Libre
+              </option><option> Averia Sans Libre </option><option>
+                Averia Serif Libre
+              </option><option> Azeret Mono </option><option>
+                B612
+              </option><option> B612 Mono </option><option>
+                BIZ UDGothic
+              </option><option> BIZ UDMincho </option><option>
+                BIZ UDPGothic
+              </option><option> BIZ UDPMincho </option><option>
+                Babylonica
+              </option><option> Bad Script </option><option>
+                Bahiana
+              </option><option> Bahianita </option><option>
+                Bai Jamjuree
+              </option><option> Bakbak One </option><option>
+                Ballet
+              </option><option> Baloo 2 </option><option>
+                Baloo Bhai 2
+              </option><option> Baloo Bhaijaan 2 </option><option>
+                Baloo Bhaina 2
+              </option><option> Baloo Chettan 2 </option><option>
+                Baloo Da 2
+              </option><option> Baloo Paaji 2 </option><option>
+                Baloo Tamma 2
+              </option><option> Baloo Tammudu 2 </option><option>
+                Baloo Thambi 2
+              </option><option> Balsamiq Sans </option><option>
+                Balthazar
+              </option><option> Bangers </option><option>
+                Barlow
+              </option><option> Barlow Condensed </option><option>
+                Barlow Semi Condensed
+              </option><option> Barriecito </option><option>
+                Barrio
+              </option><option> Basic </option><option>
+                Baskervville
+              </option><option> Battambang </option><option>
+                Baumans
+              </option><option> Bayon </option><option>
+                Be Vietnam Pro
+              </option><option> Beau Rivage </option><option>
+                Bebas Neue
+              </option><option> Belgrano </option><option>
+                Bellefair
+              </option><option> Belleza </option><option>
+                Bellota
+              </option><option> Bellota Text </option><option>
+                BenchNine
+              </option><option> Benne </option><option> Bentham </option><option
+              >
+                Berkshire Swash
+              </option><option> Besley </option><option>
+                Beth Ellen
+              </option><option> Bevan </option><option>
+                BhuTuka Expanded One
+              </option><option> Big Shoulders Display </option><option>
+                Big Shoulders Inline Display
+              </option><option> Big Shoulders Inline Text </option><option>
+                Big Shoulders Stencil Display
+              </option><option> Big Shoulders Stencil Text </option><option>
+                Big Shoulders Text
+              </option><option> Bigelow Rules </option><option>
+                Bigshot One
+              </option><option> Bilbo </option><option>
+                Bilbo Swash Caps
+              </option><option> BioRhyme </option><option>
+                BioRhyme Expanded
+              </option><option> Birthstone </option><option>
+                Birthstone Bounce
+              </option><option> Biryani </option><option>
+                Bitter
+              </option><option> Black And White Picture </option><option>
+                Black Han Sans
+              </option><option> Black Ops One </option><option>
+                Blaka
+              </option><option> Blaka Hollow </option><option>
+                Blaka Ink
+              </option><option> Blinker </option><option>
+                Bodoni Moda
+              </option><option> Bokor </option><option>
+                Bona Nova
+              </option><option> Bonbon </option><option>
+                Bonheur Royale
+              </option><option> Boogaloo </option><option>
+                Bowlby One
+              </option><option> Bowlby One SC </option><option>
+                Brawler
+              </option><option> Bree Serif </option><option>
+                Brygada 1918
+              </option><option> Bubblegum Sans </option><option>
+                Bubbler One
+              </option><option> Buda </option><option> Buenard </option><option>
+                Bungee
+              </option><option> Bungee Hairline </option><option>
+                Bungee Inline
+              </option><option> Bungee Outline </option><option>
+                Bungee Shade
+              </option><option> Bungee Spice </option><option>
+                Butcherman
+              </option><option> Butterfly Kids </option><option>
+                Cabin
+              </option><option> Cabin Condensed </option><option>
+                Cabin Sketch
+              </option><option> Caesar Dressing </option><option>
+                Cagliostro
+              </option><option> Cairo </option><option>
+                Cairo Play
+              </option><option> Caladea </option><option>
+                Calistoga
+              </option><option> Calligraffitti </option><option>
+                Cambay
+              </option><option> Cambo </option><option> Candal </option><option>
+                Cantarell
+              </option><option> Cantata One </option><option>
+                Cantora One
+              </option><option> Capriola </option><option>
+                Caramel
+              </option><option> Carattere </option><option>
+                Cardo
+              </option><option> Carme </option><option>
+                Carrois Gothic
+              </option><option> Carrois Gothic SC </option><option>
+                Carter One
+              </option><option> Castoro </option><option>
+                Catamaran
+              </option><option> Caudex </option><option> Caveat </option><option
+              >
+                Caveat Brush
+              </option><option> Cedarville Cursive </option><option>
+                Ceviche One
+              </option><option> Chakra Petch </option><option>
+                Changa
+              </option><option> Changa One </option><option>
+                Chango
+              </option><option> Charis SIL </option><option>
+                Charm
+              </option><option> Charmonman </option><option>
+                Chathura
+              </option><option> Chau Philomene One </option><option>
+                Chela One
+              </option><option> Chelsea Market </option><option>
+                Chenla
+              </option><option> Cherish </option><option>
+                Cherry Cream Soda
+              </option><option> Cherry Swash </option><option>
+                Chewy
+              </option><option> Chicle </option><option>
+                Chilanka
+              </option><option> Chivo </option><option>
+                Chivo Mono
+              </option><option> Chonburi </option><option>
+                Cinzel
+              </option><option> Cinzel Decorative </option><option>
+                Clicker Script
+              </option><option> Coda </option><option>
+                Coda Caption
+              </option><option> Codystar </option><option>
+                Coiny
+              </option><option> Combo </option><option>
+                Comfortaa
+              </option><option> Comforter </option><option>
+                Comforter Brush
+              </option><option> Comic Neue </option><option>
+                Coming Soon
+              </option><option> Commissioner </option><option>
+                Concert One
+              </option><option> Condiment </option><option>
+                Content
+              </option><option> Contrail One </option><option>
+                Convergence
+              </option><option> Cookie </option><option> Copse </option><option>
+                Corben
+              </option><option> Corinthia </option><option>
+                Cormorant
+              </option><option> Cormorant Garamond </option><option>
+                Cormorant Infant
+              </option><option> Cormorant SC </option><option>
+                Cormorant Unicase
+              </option><option> Cormorant Upright </option><option>
+                Courgette
+              </option><option> Courier Prime </option><option>
+                Cousine
+              </option><option> Coustard </option><option>
+                Covered By Your Grace
+              </option><option> Crafty Girls </option><option>
+                Creepster
+              </option><option> Crete Round </option><option>
+                Crimson Pro
+              </option><option> Crimson Text </option><option>
+                Croissant One
+              </option><option> Crushed </option><option>
+                Cuprum
+              </option><option> Cute Font </option><option>
+                Cutive
+              </option><option> Cutive Mono </option><option>
+                DM Mono
+              </option><option> DM Sans </option><option>
+                DM Serif Display
+              </option><option> DM Serif Text </option><option>
+                Damion
+              </option><option> Dancing Script </option><option>
+                Dangrek
+              </option><option> Darker Grotesque </option><option>
+                David Libre
+              </option><option> Dawning of a New Day </option><option>
+                Days One
+              </option><option> Dekko </option><option>
+                Dela Gothic One
+              </option><option> Delius </option><option>
+                Delius Swash Caps
+              </option><option> Delius Unicase </option><option>
+                Della Respira
+              </option><option> Denk One </option><option>
+                Devonshire
+              </option><option> Dhurjati </option><option>
+                Didact Gothic
+              </option><option> Diplomata </option><option>
+                Diplomata SC
+              </option><option> Do Hyeon </option><option>
+                Dokdo
+              </option><option> Domine </option><option>
+                Donegal One
+              </option><option> Dongle </option><option>
+                Doppio One
+              </option><option> Dorsa </option><option> Dosis </option><option>
+                DotGothic16
+              </option><option> Dr Sugiyama </option><option>
+                Duru Sans
+              </option><option> DynaPuff </option><option>
+                Dynalight
+              </option><option> EB Garamond </option><option>
+                Eagle Lake
+              </option><option> East Sea Dokdo </option><option>
+                Eater
+              </option><option> Economica </option><option>
+                Eczar
+              </option><option> Edu NSW ACT Foundation </option><option>
+                Edu QLD Beginner
+              </option><option> Edu SA Beginner </option><option>
+                Edu TAS Beginner
+              </option><option> Edu VIC WA NT Beginner </option><option>
+                El Messiri
+              </option><option> Electrolize </option><option>
+                Elsie
+              </option><option> Elsie Swash Caps </option><option>
+                Emblema One
+              </option><option> Emilys Candy </option><option>
+                Encode Sans
+              </option><option> Encode Sans Condensed </option><option>
+                Encode Sans Expanded
+              </option><option> Encode Sans SC </option><option>
+                Encode Sans Semi Condensed
+              </option><option> Encode Sans Semi Expanded </option><option>
+                Engagement
+              </option><option> Englebert </option><option>
+                Enriqueta
+              </option><option> Ephesis </option><option>
+                Epilogue
+              </option><option> Erica One </option><option>
+                Esteban
+              </option><option> Estonia </option><option>
+                Euphoria Script
+              </option><option> Ewert </option><option> Exo </option><option>
+                Exo 2
+              </option><option> Expletus Sans </option><option>
+                Explora
+              </option><option> Fahkwang </option><option>
+                Familjen Grotesk
+              </option><option> Fanwood Text </option><option>
+                Farro
+              </option><option> Farsan </option><option>
+                Fascinate
+              </option><option> Fascinate Inline </option><option>
+                Faster One
+              </option><option> Fasthand </option><option>
+                Fauna One
+              </option><option> Faustina </option><option>
+                Federant
+              </option><option> Federo </option><option> Felipa </option><option
+              >
+                Fenix
+              </option><option> Festive </option><option>
+                Figtree
+              </option><option> Finger Paint </option><option>
+                Finlandica
+              </option><option> Fira Code </option><option>
+                Fira Mono
+              </option><option> Fira Sans </option><option>
+                Fira Sans Condensed
+              </option><option> Fira Sans Extra Condensed </option><option>
+                Fjalla One
+              </option><option> Fjord One </option><option>
+                Flamenco
+              </option><option> Flavors </option><option>
+                Fleur De Leah
+              </option><option> Flow Block </option><option>
+                Flow Circular
+              </option><option> Flow Rounded </option><option>
+                Fondamento
+              </option><option> Fontdiner Swanky </option><option>
+                Forum
+              </option><option> Fragment Mono </option><option>
+                Francois One
+              </option><option> Frank Ruhl Libre </option><option>
+                Fraunces
+              </option><option> Freckle Face </option><option>
+                Fredericka the Great
+              </option><option> Fredoka </option><option>
+                Fredoka One
+              </option><option> Freehand </option><option>
+                Fresca
+              </option><option> Frijole </option><option>
+                Fruktur
+              </option><option> Fugaz One </option><option>
+                Fuggles
+              </option><option> Fuzzy Bubbles </option><option>
+                GFS Didot
+              </option><option> GFS Neohellenic </option><option>
+                Gabriela
+              </option><option> Gaegu </option><option> Gafata </option><option>
+                Galada
+              </option><option> Galdeano </option><option>
+                Galindo
+              </option><option> Gamja Flower </option><option>
+                Gantari
+              </option><option> Gayathri </option><option>
+                Gelasio
+              </option><option> Gemunu Libre </option><option>
+                Genos
+              </option><option> Gentium Book Basic </option><option>
+                Gentium Book Plus
+              </option><option> Gentium Plus </option><option>
+                Geo
+              </option><option> Georama </option><option>
+                Geostar
+              </option><option> Geostar Fill </option><option>
+                Germania One
+              </option><option> Gideon Roman </option><option>
+                Gidugu
+              </option><option> Gilda Display </option><option>
+                Girassol
+              </option><option> Give You Glory </option><option>
+                Glass Antiqua
+              </option><option> Glegoo </option><option>
+                Gloria Hallelujah
+              </option><option> Glory </option><option> Gluten </option><option>
+                Goblin One
+              </option><option> Gochi Hand </option><option>
+                Goldman
+              </option><option> Gorditas </option><option>
+                Gothic A1
+              </option><option> Gotu </option><option>
+                Goudy Bookletter 1911
+              </option><option> Gowun Batang </option><option>
+                Gowun Dodum
+              </option><option> Graduate </option><option>
+                Grand Hotel
+              </option><option> Grandstander </option><option>
+                Grape Nuts
+              </option><option> Gravitas One </option><option>
+                Great Vibes
+              </option><option> Grechen Fuemen </option><option>
+                Grenze
+              </option><option> Grenze Gotisch </option><option>
+                Grey Qo
+              </option><option> Griffy </option><option> Gruppo </option><option
+              >
+                Gudea
+              </option><option> Gugi </option><option> Gulzar </option><option>
+                Gupter
+              </option><option> Gurajada </option><option>
+                Gwendolyn
+              </option><option> Habibi </option><option>
+                Hachi Maru Pop
+              </option><option> Hahmlet </option><option>
+                Halant
+              </option><option> Hammersmith One </option><option>
+                Hanalei
+              </option><option> Hanalei Fill </option><option>
+                Handlee
+              </option><option> Hanken Grotesk </option><option>
+                Hanuman
+              </option><option> Happy Monkey </option><option>
+                Harmattan
+              </option><option> Headland One </option><option>
+                Heebo
+              </option><option> Henny Penny </option><option>
+                Hepta Slab
+              </option><option> Herr Von Muellerhoff </option><option>
+                Hi Melody
+              </option><option> Hina Mincho </option><option>
+                Hind
+              </option><option> Hind Guntur </option><option>
+                Hind Madurai
+              </option><option> Hind Siliguri </option><option>
+                Hind Vadodara
+              </option><option> Holtwood One SC </option><option>
+                Homemade Apple
+              </option><option> Homenaje </option><option>
+                Hubballi
+              </option><option> Hurricane </option><option>
+                IBM Plex Mono
+              </option><option> IBM Plex Sans </option><option>
+                IBM Plex Sans Arabic
+              </option><option> IBM Plex Sans Condensed </option><option>
+                IBM Plex Sans Devanagari
+              </option><option> IBM Plex Sans Hebrew </option><option>
+                IBM Plex Sans JP
+              </option><option> IBM Plex Sans KR </option><option>
+                IBM Plex Sans Thai
+              </option><option> IBM Plex Sans Thai Looped </option><option>
+                IBM Plex Serif
+              </option><option> IM Fell DW Pica </option><option>
+                IM Fell DW Pica SC
+              </option><option> IM Fell Double Pica </option><option>
+                IM Fell Double Pica SC
+              </option><option> IM Fell English </option><option>
+                IM Fell English SC
+              </option><option> IM Fell French Canon </option><option>
+                IM Fell French Canon SC
+              </option><option> IM Fell Great Primer </option><option>
+                IM Fell Great Primer SC
+              </option><option> Ibarra Real Nova </option><option>
+                Iceberg
+              </option><option> Iceland </option><option> Imbue </option><option
+              >
+                Imperial Script
+              </option><option> Imprima </option><option>
+                Inconsolata
+              </option><option> Inder </option><option>
+                Indie Flower
+              </option><option> Ingrid Darling </option><option>
+                Inika
+              </option><option> Inknut Antiqua </option><option>
+                Inria Sans
+              </option><option> Inria Serif </option><option>
+                Inspiration
+              </option><option> Inter </option><option>
+                Inter Tight
+              </option><option> Irish Grover </option><option>
+                Island Moments
+              </option><option> Istok Web </option><option>
+                Italiana
+              </option><option> Italianno </option><option>
+                Itim
+              </option><option> Jacques Francois </option><option>
+                Jacques Francois Shadow
+              </option><option> Jaldi </option><option>
+                JetBrains Mono
+              </option><option> Jim Nightshade </option><option>
+                Joan
+              </option><option> Jockey One </option><option>
+                Jolly Lodger
+              </option><option> Jomhuria </option><option>
+                Jomolhari
+              </option><option> Josefin Sans </option><option>
+                Josefin Slab
+              </option><option> Jost </option><option> Joti One </option><option
+              >
+                Jua
+              </option><option> Judson </option><option> Julee </option><option>
+                Julius Sans One
+              </option><option> Junge </option><option> Jura </option><option>
+                Just Another Hand
+              </option><option> Just Me Again Down Here </option><option>
+                K2D
+              </option><option> Kadwa </option><option>
+                Kaisei Decol
+              </option><option> Kaisei HarunoUmi </option><option>
+                Kaisei Opti
+              </option><option> Kaisei Tokumin </option><option>
+                Kalam
+              </option><option> Kameron </option><option> Kanit </option><option
+              >
+                Kantumruy
+              </option><option> Kantumruy Pro </option><option>
+                Karantina
+              </option><option> Karla </option><option> Karma </option><option>
+                Katibeh
+              </option><option> Kaushan Script </option><option>
+                Kavivanar
+              </option><option> Kavoon </option><option>
+                Kdam Thmor Pro
+              </option><option> Keania One </option><option>
+                Kelly Slab
+              </option><option> Kenia </option><option> Khand </option><option>
+                Khmer
+              </option><option> Khula </option><option> Kings </option><option>
+                Kirang Haerang
+              </option><option> Kite One </option><option>
+                Kiwi Maru
+              </option><option> Klee One </option><option>
+                Knewave
+              </option><option> KoHo </option><option>
+                Kodchasan
+              </option><option> Koh Santepheap </option><option>
+                Kolker Brush
+              </option><option> Kosugi </option><option>
+                Kosugi Maru
+              </option><option> Kotta One </option><option>
+                Koulen
+              </option><option> Kranky </option><option> Kreon </option><option>
+                Kristi
+              </option><option> Krona One </option><option>
+                Krub
+              </option><option> Kufam </option><option>
+                Kulim Park
+              </option><option> Kumar One </option><option>
+                Kumar One Outline
+              </option><option> Kumbh Sans </option><option>
+                Kurale
+              </option><option> La Belle Aurore </option><option>
+                Lacquer
+              </option><option> Laila </option><option>
+                Lakki Reddy
+              </option><option> Lalezar </option><option>
+                Lancelot
+              </option><option> Langar </option><option> Lateef </option><option
+              >
+                Lato
+              </option><option> Lavishly Yours </option><option>
+                League Gothic
+              </option><option> League Script </option><option>
+                League Spartan
+              </option><option> Leckerli One </option><option>
+                Ledger
+              </option><option> Lekton </option><option> Lemon </option><option>
+                Lemonada
+              </option><option> Lexend </option><option>
+                Lexend Deca
+              </option><option> Lexend Exa </option><option>
+                Lexend Giga
+              </option><option> Lexend Mega </option><option>
+                Lexend Peta
+              </option><option> Lexend Tera </option><option>
+                Lexend Zetta
+              </option><option> Libre Barcode 128 </option><option>
+                Libre Barcode 128 Text
+              </option><option> Libre Barcode 39 </option><option>
+                Libre Barcode 39 Extended
+              </option><option> Libre Barcode 39 Extended Text </option><option>
+                Libre Barcode 39 Text
+              </option><option> Libre Barcode EAN13 Text </option><option>
+                Libre Baskerville
+              </option><option> Libre Bodoni </option><option>
+                Libre Caslon Display
+              </option><option> Libre Caslon Text </option><option>
+                Libre Franklin
+              </option><option> Licorice </option><option>
+                Life Savers
+              </option><option> Lilita One </option><option>
+                Lily Script One
+              </option><option> Limelight </option><option>
+                Linden Hill
+              </option><option> Literata </option><option>
+                Liu Jian Mao Cao
+              </option><option> Livvic </option><option>
+                Lobster
+              </option><option> Lobster Two </option><option>
+                Londrina Outline
+              </option><option> Londrina Shadow </option><option>
+                Londrina Sketch
+              </option><option> Londrina Solid </option><option>
+                Long Cang
+              </option><option> Lora </option><option>
+                Love Light
+              </option><option> Love Ya Like A Sister </option><option>
+                Loved by the King
+              </option><option> Lovers Quarrel </option><option>
+                Luckiest Guy
+              </option><option> Lusitana </option><option>
+                Lustria
+              </option><option> Luxurious Roman </option><option>
+                Luxurious Script
+              </option><option> M PLUS 1 </option><option>
+                M PLUS 1 Code
+              </option><option> M PLUS 1p </option><option>
+                M PLUS 2
+              </option><option> M PLUS Code Latin </option><option>
+                M PLUS Rounded 1c
+              </option><option> Ma Shan Zheng </option><option>
+                Macondo
+              </option><option> Macondo Swash Caps </option><option>
+                Mada
+              </option><option> Magra </option><option>
+                Maiden Orange
+              </option><option> Maitree </option><option>
+                Major Mono Display
+              </option><option> Mako </option><option> Mali </option><option>
+                Mallanna
+              </option><option> Mandali </option><option>
+                Manjari
+              </option><option> Manrope </option><option>
+                Mansalva
+              </option><option> Manuale </option><option>
+                Marcellus
+              </option><option> Marcellus SC </option><option>
+                Marck Script
+              </option><option> Margarine </option><option>
+                Marhey
+              </option><option> Markazi Text </option><option>
+                Marko One
+              </option><option> Marmelad </option><option>
+                Martel
+              </option><option> Martel Sans </option><option>
+                Martian Mono
+              </option><option> Marvel </option><option> Mate </option><option>
+                Mate SC
+              </option><option> Maven Pro </option><option>
+                McLaren
+              </option><option> Mea Culpa </option><option>
+                Meddon
+              </option><option> MedievalSharp </option><option>
+                Medula One
+              </option><option> Meera Inimai </option><option>
+                Megrim
+              </option><option> Meie Script </option><option>
+                Meow Script
+              </option><option> Merienda </option><option>
+                Merienda One
+              </option><option> Merriweather </option><option>
+                Merriweather Sans
+              </option><option> Metal </option><option>
+                Metal Mania
+              </option><option> Metamorphous </option><option>
+                Metrophobic
+              </option><option> Michroma </option><option>
+                Milonga
+              </option><option> Miltonian </option><option>
+                Miltonian Tattoo
+              </option><option> Mina </option><option> Mingzat </option><option>
+                Miniver
+              </option><option> Miriam Libre </option><option>
+                Mirza
+              </option><option> Miss Fajardose </option><option>
+                Mitr
+              </option><option> Mochiy Pop One </option><option>
+                Mochiy Pop P One
+              </option><option> Modak </option><option>
+                Modern Antiqua
+              </option><option> Mogra </option><option> Mohave </option><option>
+                Molengo
+              </option><option> Molle </option><option> Monda </option><option>
+                Monofett
+              </option><option> Monoton </option><option>
+                Monsieur La Doulaise
+              </option><option> Montaga </option><option>
+                Montagu Slab
+              </option><option> MonteCarlo </option><option>
+                Montez
+              </option><option> Montserrat </option><option>
+                Montserrat Alternates
+              </option><option> Montserrat Subrayada </option><option>
+                Moo Lah Lah
+              </option><option> Moon Dance </option><option>
+                Moul
+              </option><option> Moulpali </option><option>
+                Mountains of Christmas
+              </option><option> Mouse Memoirs </option><option>
+                Mr Bedfort
+              </option><option> Mr Dafoe </option><option>
+                Mr De Haviland
+              </option><option> Mrs Saint Delafield </option><option>
+                Mrs Sheppards
+              </option><option> Ms Madi </option><option> Mukta </option><option
+              >
+                Mukta Mahee
+              </option><option> Mukta Malar </option><option>
+                Mukta Vaani
+              </option><option> Mulish </option><option>
+                Murecho
+              </option><option> MuseoModerno </option><option>
+                My Soul
+              </option><option> Mystery Quest </option><option>
+                NTR
+              </option><option> Nabla </option><option>
+                Nanum Brush Script
+              </option><option> Nanum Gothic </option><option>
+                Nanum Gothic Coding
+              </option><option> Nanum Myeongjo </option><option>
+                Nanum Pen Script
+              </option><option> Neonderthaw </option><option>
+                Nerko One
+              </option><option> Neucha </option><option> Neuton </option><option
+              >
+                New Rocker
+              </option><option> New Tegomin </option><option>
+                News Cycle
+              </option><option> Newsreader </option><option>
+                Niconne
+              </option><option> Niramit </option><option>
+                Nixie One
+              </option><option> Nobile </option><option> Nokora </option><option
+              >
+                Norican
+              </option><option> Nosifer </option><option>
+                Notable
+              </option><option> Nothing You Could Do </option><option>
+                Noticia Text
+              </option><option> Noto Color Emoji </option><option>
+                Noto Emoji
+              </option><option> Noto Kufi Arabic </option><option>
+                Noto Music
+              </option><option> Noto Naskh Arabic </option><option>
+                Noto Nastaliq Urdu
+              </option><option> Noto Rashi Hebrew </option><option>
+                Noto Sans
+              </option><option> Noto Sans Adlam </option><option>
+                Noto Sans Adlam Unjoined
+              </option><option> Noto Sans Anatolian Hieroglyphs </option><option
+              >
+                Noto Sans Arabic
+              </option><option> Noto Sans Armenian </option><option>
+                Noto Sans Avestan
+              </option><option> Noto Sans Balinese </option><option>
+                Noto Sans Bamum
+              </option><option> Noto Sans Bassa Vah </option><option>
+                Noto Sans Batak
+              </option><option> Noto Sans Bengali </option><option>
+                Noto Sans Bhaiksuki
+              </option><option> Noto Sans Brahmi </option><option>
+                Noto Sans Buginese
+              </option><option> Noto Sans Buhid </option><option>
+                Noto Sans Canadian Aboriginal
+              </option><option> Noto Sans Carian </option><option>
+                Noto Sans Caucasian Albanian
+              </option><option> Noto Sans Chakma </option><option>
+                Noto Sans Cham
+              </option><option> Noto Sans Cherokee </option><option>
+                Noto Sans Coptic
+              </option><option> Noto Sans Cuneiform </option><option>
+                Noto Sans Cypriot
+              </option><option> Noto Sans Deseret </option><option>
+                Noto Sans Devanagari
+              </option><option> Noto Sans Display </option><option>
+                Noto Sans Duployan
+              </option><option> Noto Sans Egyptian Hieroglyphs </option><option>
+                Noto Sans Elbasan
+              </option><option> Noto Sans Elymaic </option><option>
+                Noto Sans Ethiopic
+              </option><option> Noto Sans Georgian </option><option>
+                Noto Sans Glagolitic
+              </option><option> Noto Sans Gothic </option><option>
+                Noto Sans Grantha
+              </option><option> Noto Sans Gujarati </option><option>
+                Noto Sans Gunjala Gondi
+              </option><option> Noto Sans Gurmukhi </option><option>
+                Noto Sans HK
+              </option><option> Noto Sans Hanifi Rohingya </option><option>
+                Noto Sans Hanunoo
+              </option><option> Noto Sans Hatran </option><option>
+                Noto Sans Hebrew
+              </option><option> Noto Sans Imperial Aramaic </option><option>
+                Noto Sans Indic Siyaq Numbers
+              </option><option> Noto Sans Inscriptional Pahlavi </option><option
+              >
+                Noto Sans Inscriptional Parthian
+              </option><option> Noto Sans JP </option><option>
+                Noto Sans Javanese
+              </option><option> Noto Sans KR </option><option>
+                Noto Sans Kaithi
+              </option><option> Noto Sans Kannada </option><option>
+                Noto Sans Kayah Li
+              </option><option> Noto Sans Kharoshthi </option><option>
+                Noto Sans Khmer
+              </option><option> Noto Sans Khojki </option><option>
+                Noto Sans Khudawadi
+              </option><option> Noto Sans Lao </option><option>
+                Noto Sans Lao Looped
+              </option><option> Noto Sans Lepcha </option><option>
+                Noto Sans Limbu
+              </option><option> Noto Sans Linear A </option><option>
+                Noto Sans Linear B
+              </option><option> Noto Sans Lisu </option><option>
+                Noto Sans Lycian
+              </option><option> Noto Sans Lydian </option><option>
+                Noto Sans Mahajani
+              </option><option> Noto Sans Malayalam </option><option>
+                Noto Sans Mandaic
+              </option><option> Noto Sans Manichaean </option><option>
+                Noto Sans Marchen
+              </option><option> Noto Sans Masaram Gondi </option><option>
+                Noto Sans Math
+              </option><option> Noto Sans Mayan Numerals </option><option>
+                Noto Sans Medefaidrin
+              </option><option> Noto Sans Meetei Mayek </option><option>
+                Noto Sans Mende Kikakui
+              </option><option> Noto Sans Meroitic </option><option>
+                Noto Sans Miao
+              </option><option> Noto Sans Modi </option><option>
+                Noto Sans Mongolian
+              </option><option> Noto Sans Mono </option><option>
+                Noto Sans Mro
+              </option><option> Noto Sans Multani </option><option>
+                Noto Sans Myanmar
+              </option><option> Noto Sans N Ko </option><option>
+                Noto Sans Nabataean
+              </option><option> Noto Sans New Tai Lue </option><option>
+                Noto Sans Newa
+              </option><option> Noto Sans Nushu </option><option>
+                Noto Sans Ogham
+              </option><option> Noto Sans Ol Chiki </option><option>
+                Noto Sans Old Hungarian
+              </option><option> Noto Sans Old Italic </option><option>
+                Noto Sans Old North Arabian
+              </option><option> Noto Sans Old Permic </option><option>
+                Noto Sans Old Persian
+              </option><option> Noto Sans Old Sogdian </option><option>
+                Noto Sans Old South Arabian
+              </option><option> Noto Sans Old Turkic </option><option>
+                Noto Sans Oriya
+              </option><option> Noto Sans Osage </option><option>
+                Noto Sans Osmanya
+              </option><option> Noto Sans Pahawh Hmong </option><option>
+                Noto Sans Palmyrene
+              </option><option> Noto Sans Pau Cin Hau </option><option>
+                Noto Sans Phags Pa
+              </option><option> Noto Sans Phoenician </option><option>
+                Noto Sans Psalter Pahlavi
+              </option><option> Noto Sans Rejang </option><option>
+                Noto Sans Runic
+              </option><option> Noto Sans SC </option><option>
+                Noto Sans Samaritan
+              </option><option> Noto Sans Saurashtra </option><option>
+                Noto Sans Sharada
+              </option><option> Noto Sans Shavian </option><option>
+                Noto Sans Siddham
+              </option><option> Noto Sans Sinhala </option><option>
+                Noto Sans Sogdian
+              </option><option> Noto Sans Sora Sompeng </option><option>
+                Noto Sans Soyombo
+              </option><option> Noto Sans Sundanese </option><option>
+                Noto Sans Syloti Nagri
+              </option><option> Noto Sans Symbols </option><option>
+                Noto Sans Symbols 2
+              </option><option> Noto Sans Syriac </option><option>
+                Noto Sans TC
+              </option><option> Noto Sans Tagalog </option><option>
+                Noto Sans Tagbanwa
+              </option><option> Noto Sans Tai Le </option><option>
+                Noto Sans Tai Tham
+              </option><option> Noto Sans Tai Viet </option><option>
+                Noto Sans Takri
+              </option><option> Noto Sans Tamil </option><option>
+                Noto Sans Tamil Supplement
+              </option><option> Noto Sans Telugu </option><option>
+                Noto Sans Thaana
+              </option><option> Noto Sans Thai </option><option>
+                Noto Sans Thai Looped
+              </option><option> Noto Sans Tifinagh </option><option>
+                Noto Sans Tirhuta
+              </option><option> Noto Sans Ugaritic </option><option>
+                Noto Sans Vai
+              </option><option> Noto Sans Wancho </option><option>
+                Noto Sans Warang Citi
+              </option><option> Noto Sans Yi </option><option>
+                Noto Sans Zanabazar Square
+              </option><option> Noto Serif </option><option>
+                Noto Serif Ahom
+              </option><option> Noto Serif Armenian </option><option>
+                Noto Serif Balinese
+              </option><option> Noto Serif Bengali </option><option>
+                Noto Serif Devanagari
+              </option><option> Noto Serif Display </option><option>
+                Noto Serif Dogra
+              </option><option> Noto Serif Ethiopic </option><option>
+                Noto Serif Georgian
+              </option><option> Noto Serif Grantha </option><option>
+                Noto Serif Gujarati
+              </option><option> Noto Serif Gurmukhi </option><option>
+                Noto Serif HK
+              </option><option> Noto Serif Hebrew </option><option>
+                Noto Serif JP
+              </option><option> Noto Serif KR </option><option>
+                Noto Serif Kannada
+              </option><option> Noto Serif Khmer </option><option>
+                Noto Serif Khojki
+              </option><option> Noto Serif Lao </option><option>
+                Noto Serif Malayalam
+              </option><option> Noto Serif Myanmar </option><option>
+                Noto Serif NP Hmong
+              </option><option>
+                Noto Serif Nyiakeng Puachue Hmong
+              </option><option> Noto Serif Oriya </option><option>
+                Noto Serif SC
+              </option><option> Noto Serif Sinhala </option><option>
+                Noto Serif TC
+              </option><option> Noto Serif Tamil </option><option>
+                Noto Serif Tangut
+              </option><option> Noto Serif Telugu </option><option>
+                Noto Serif Thai
+              </option><option> Noto Serif Tibetan </option><option>
+                Noto Serif Yezidi
+              </option><option> Noto Traditional Nushu </option><option>
+                Nova Cut
+              </option><option> Nova Flat </option><option>
+                Nova Mono
+              </option><option> Nova Oval </option><option>
+                Nova Round
+              </option><option> Nova Script </option><option>
+                Nova Slim
+              </option><option> Nova Square </option><option>
+                Numans
+              </option><option> Nunito </option><option>
+                Nunito Sans
+              </option><option> Nuosu SIL </option><option>
+                Odibee Sans
+              </option><option> Odor Mean Chey </option><option>
+                Offside
+              </option><option> Oi </option><option>
+                Old Standard TT
+              </option><option> Oldenburg </option><option> Ole </option><option
+              >
+                Oleo Script
+              </option><option> Oleo Script Swash Caps </option><option>
+                Oooh Baby
+              </option><option> Open Sans </option><option>
+                Oranienbaum
+              </option><option> Orbitron </option><option>
+                Oregano
+              </option><option> Orelega One </option><option>
+                Orienta
+              </option><option> Original Surfer </option><option>
+                Oswald
+              </option><option> Outfit </option><option>
+                Over the Rainbow
+              </option><option> Overlock </option><option>
+                Overlock SC
+              </option><option> Overpass </option><option>
+                Overpass Mono
+              </option><option> Ovo </option><option> Oxanium </option><option>
+                Oxygen
+              </option><option> Oxygen Mono </option><option>
+                PT Mono
+              </option><option> PT Sans </option><option>
+                PT Sans Caption
+              </option><option> PT Sans Narrow </option><option>
+                PT Serif
+              </option><option> PT Serif Caption </option><option>
+                Pacifico
+              </option><option> Padauk </option><option>
+                Palanquin
+              </option><option> Palanquin Dark </option><option>
+                Pangolin
+              </option><option> Paprika </option><option>
+                Parisienne
+              </option><option> Passero One </option><option>
+                Passion One
+              </option><option> Passions Conflict </option><option>
+                Pathway Gothic One
+              </option><option> Patrick Hand </option><option>
+                Patrick Hand SC
+              </option><option> Pattaya </option><option>
+                Patua One
+              </option><option> Pavanam </option><option>
+                Paytone One
+              </option><option> Peddana </option><option>
+                Peralta
+              </option><option> Permanent Marker </option><option>
+                Petemoss
+              </option><option> Petit Formal Script </option><option>
+                Petrona
+              </option><option> Philosopher </option><option>
+                Piazzolla
+              </option><option> Piedra </option><option>
+                Pinyon Script
+              </option><option> Pirata One </option><option>
+                Plaster
+              </option><option> Play </option><option> Playball </option><option
+              >
+                Playfair Display
+              </option><option> Playfair Display SC </option><option>
+                Plus Jakarta Sans
+              </option><option> Podkova </option><option>
+                Poiret One
+              </option><option> Poller One </option><option>
+                Poly
+              </option><option> Pompiere </option><option>
+                Pontano Sans
+              </option><option> Poor Story </option><option>
+                Poppins
+              </option><option> Port Lligat Sans </option><option>
+                Port Lligat Slab
+              </option><option> Potta One </option><option>
+                Pragati Narrow
+              </option><option> Praise </option><option> Prata </option><option>
+                Preahvihear
+              </option><option> Press Start 2P </option><option>
+                Pridi
+              </option><option> Princess Sofia </option><option>
+                Prociono
+              </option><option> Prompt </option><option>
+                Prosto One
+              </option><option> Proza Libre </option><option>
+                Public Sans
+              </option><option> Puppies Play </option><option>
+                Puritan
+              </option><option> Purple Purse </option><option>
+                Qahiri
+              </option><option> Quando </option><option>
+                Quantico
+              </option><option> Quattrocento </option><option>
+                Quattrocento Sans
+              </option><option> Questrial </option><option>
+                Quicksand
+              </option><option> Quintessential </option><option>
+                Qwigley
+              </option><option> Qwitcher Grypen </option><option>
+                Racing Sans One
+              </option><option> Radio Canada </option><option>
+                Radley
+              </option><option> Rajdhani </option><option>
+                Rakkas
+              </option><option> Raleway </option><option>
+                Raleway Dots
+              </option><option> Ramabhadra </option><option>
+                Ramaraja
+              </option><option> Rambla </option><option>
+                Rammetto One
+              </option><option> Rampart One </option><option>
+                Ranchers
+              </option><option> Rancho </option><option> Ranga </option><option>
+                Rasa
+              </option><option> Rationale </option><option>
+                Ravi Prakash
+              </option><option> Readex Pro </option><option>
+                Recursive
+              </option><option> Red Hat Display </option><option>
+                Red Hat Mono
+              </option><option> Red Hat Text </option><option>
+                Red Rose
+              </option><option> Redacted </option><option>
+                Redacted Script
+              </option><option> Redressed </option><option>
+                Reem Kufi
+              </option><option> Reem Kufi Fun </option><option>
+                Reem Kufi Ink
+              </option><option> Reenie Beanie </option><option>
+                Reggae One
+              </option><option> Revalia </option><option>
+                Rhodium Libre
+              </option><option> Ribeye </option><option>
+                Ribeye Marrow
+              </option><option> Righteous </option><option>
+                Risque
+              </option><option> Road Rage </option><option>
+                Roboto
+              </option><option> Roboto Condensed </option><option>
+                Roboto Flex
+              </option><option> Roboto Mono </option><option>
+                Roboto Serif
+              </option><option> Roboto Slab </option><option>
+                Rochester
+              </option><option> Rock Salt </option><option>
+                RocknRoll One
+              </option><option> Rokkitt </option><option>
+                Romanesco
+              </option><option> Ropa Sans </option><option>
+                Rosario
+              </option><option> Rosarivo </option><option>
+                Rouge Script
+              </option><option> Rowdies </option><option>
+                Rozha One
+              </option><option> Rubik </option><option>
+                Rubik 80s Fade
+              </option><option> Rubik Beastly </option><option>
+                Rubik Bubbles
+              </option><option> Rubik Burned </option><option>
+                Rubik Dirt
+              </option><option> Rubik Distressed </option><option>
+                Rubik Gemstones
+              </option><option> Rubik Glitch </option><option>
+                Rubik Iso
+              </option><option> Rubik Marker Hatch </option><option>
+                Rubik Maze
+              </option><option> Rubik Microbe </option><option>
+                Rubik Mono One
+              </option><option> Rubik Moonrocks </option><option>
+                Rubik Puddles
+              </option><option> Rubik Spray Paint </option><option>
+                Rubik Storm
+              </option><option> Rubik Vinyl </option><option>
+                Rubik Wet Paint
+              </option><option> Ruda </option><option> Rufina </option><option>
+                Ruge Boogie
+              </option><option> Ruluko </option><option>
+                Rum Raisin
+              </option><option> Ruslan Display </option><option>
+                Russo One
+              </option><option> Ruthie </option><option> Rye </option><option>
+                STIX Two Text
+              </option><option> Sacramento </option><option>
+                Sahitya
+              </option><option> Sail </option><option> Saira </option><option>
+                Saira Condensed
+              </option><option> Saira Extra Condensed </option><option>
+                Saira Semi Condensed
+              </option><option> Saira Stencil One </option><option>
+                Salsa
+              </option><option> Sanchez </option><option>
+                Sancreek
+              </option><option> Sansita </option><option>
+                Sansita Swashed
+              </option><option> Sarabun </option><option>
+                Sarala
+              </option><option> Sarina </option><option>
+                Sarpanch
+              </option><option> Sassy Frass </option><option>
+                Satisfy
+              </option><option> Sawarabi Gothic </option><option>
+                Sawarabi Mincho
+              </option><option> Scada </option><option>
+                Scheherazade New
+              </option><option> Schoolbell </option><option>
+                Scope One
+              </option><option> Seaweed Script </option><option>
+                Secular One
+              </option><option> Sedgwick Ave </option><option>
+                Sedgwick Ave Display
+              </option><option> Sen </option><option>
+                Send Flowers
+              </option><option> Sevillana </option><option>
+                Seymour One
+              </option><option> Shadows Into Light </option><option>
+                Shadows Into Light Two
+              </option><option> Shalimar </option><option>
+                Shanti
+              </option><option> Share </option><option>
+                Share Tech
+              </option><option> Share Tech Mono </option><option>
+                Shippori Antique
+              </option><option> Shippori Antique B1 </option><option>
+                Shippori Mincho
+              </option><option> Shippori Mincho B1 </option><option>
+                Shojumaru
+              </option><option> Short Stack </option><option>
+                Shrikhand
+              </option><option> Siemreap </option><option>
+                Sigmar One
+              </option><option> Signika </option><option>
+                Signika Negative
+              </option><option> Silkscreen </option><option>
+                Simonetta
+              </option><option> Single Day </option><option>
+                Sintony
+              </option><option> Sirin Stencil </option><option>
+                Six Caps
+              </option><option> Skranji </option><option>
+                Slabo 13px
+              </option><option> Slabo 27px </option><option>
+                Slackey
+              </option><option> Smokum </option><option> Smooch </option><option
+              >
+                Smooch Sans
+              </option><option> Smythe </option><option>
+                Sniglet
+              </option><option> Snippet </option><option>
+                Snowburst One
+              </option><option> Sofadi One </option><option>
+                Sofia
+              </option><option> Solway </option><option>
+                Song Myung
+              </option><option> Sono </option><option>
+                Sonsie One
+              </option><option> Sora </option><option>
+                Sorts Mill Goudy
+              </option><option> Source Code Pro </option><option>
+                Source Sans 3
+              </option><option> Source Sans Pro </option><option>
+                Source Serif 4
+              </option><option> Source Serif Pro </option><option>
+                Space Grotesk
+              </option><option> Space Mono </option><option>
+                Special Elite
+              </option><option> Spectral </option><option>
+                Spectral SC
+              </option><option> Spicy Rice </option><option>
+                Spinnaker
+              </option><option> Spirax </option><option> Splash </option><option
+              >
+                Spline Sans
+              </option><option> Spline Sans Mono </option><option>
+                Squada One
+              </option><option> Square Peg </option><option>
+                Sree Krushnadevaraya
+              </option><option> Sriracha </option><option>
+                Srisakdi
+              </option><option> Staatliches </option><option>
+                Stalemate
+              </option><option> Stalinist One </option><option>
+                Stardos Stencil
+              </option><option> Stick </option><option>
+                Stick No Bills
+              </option><option> Stint Ultra Condensed </option><option>
+                Stint Ultra Expanded
+              </option><option> Stoke </option><option> Strait </option><option>
+                Style Script
+              </option><option> Stylish </option><option>
+                Sue Ellen Francisco
+              </option><option> Suez One </option><option>
+                Sulphur Point
+              </option><option> Sumana </option><option>
+                Sunflower
+              </option><option> Sunshiney </option><option>
+                Supermercado One
+              </option><option> Sura </option><option> Suranna </option><option>
+                Suravaram
+              </option><option> Suwannaphum </option><option>
+                Swanky and Moo Moo
+              </option><option> Syncopate </option><option>
+                Syne
+              </option><option> Syne Mono </option><option>
+                Syne Tactile
+              </option><option> Tai Heritage Pro </option><option>
+                Tajawal
+              </option><option> Tangerine </option><option>
+                Tapestry
+              </option><option> Taprom </option><option> Tauri </option><option>
+                Taviraj
+              </option><option> Teko </option><option> Telex </option><option>
+                Tenali Ramakrishna
+              </option><option> Tenor Sans </option><option>
+                Text Me One
+              </option><option> Texturina </option><option>
+                Thasadith
+              </option><option> The Girl Next Door </option><option>
+                The Nautigal
+              </option><option> Tienne </option><option>
+                Tillana
+              </option><option> Timmana </option><option> Tinos </option><option
+              >
+                Tiro Bangla
+              </option><option> Tiro Devanagari Hindi </option><option>
+                Tiro Devanagari Marathi
+              </option><option> Tiro Devanagari Sanskrit </option><option>
+                Tiro Gurmukhi
+              </option><option> Tiro Kannada </option><option>
+                Tiro Tamil
+              </option><option> Tiro Telugu </option><option>
+                Titan One
+              </option><option> Titillium Web </option><option>
+                Tomorrow
+              </option><option> Tourney </option><option>
+                Trade Winds
+              </option><option> Train One </option><option>
+                Trirong
+              </option><option> Trispace </option><option>
+                Trocchi
+              </option><option> Trochut </option><option>
+                Truculenta
+              </option><option> Trykker </option><option>
+                Tulpen One
+              </option><option> Turret Road </option><option>
+                Twinkle Star
+              </option><option> Ubuntu </option><option>
+                Ubuntu Condensed
+              </option><option> Ubuntu Mono </option><option>
+                Uchen
+              </option><option> Ultra </option><option>
+                Unbounded
+              </option><option> Uncial Antiqua </option><option>
+                Underdog
+              </option><option> Unica One </option><option>
+                UnifrakturCook
+              </option><option> UnifrakturMaguntia </option><option>
+                Unkempt
+              </option><option> Unlock </option><option> Unna </option><option>
+                Updock
+              </option><option> Urbanist </option><option>
+                VT323
+              </option><option> Vampiro One </option><option>
+                Varela
+              </option><option> Varela Round </option><option>
+                Varta
+              </option><option> Vast Shadow </option><option>
+                Vazirmatn
+              </option><option> Vesper Libre </option><option>
+                Viaoda Libre
+              </option><option> Vibes </option><option> Vibur </option><option>
+                Vidaloka
+              </option><option> Viga </option><option> Voces </option><option>
+                Volkhov
+              </option><option> Vollkorn </option><option>
+                Vollkorn SC
+              </option><option> Voltaire </option><option>
+                Vujahday Script
+              </option><option> Waiting for the Sunrise </option><option>
+                Wallpoet
+              </option><option> Walter Turncoat </option><option>
+                Warnes
+              </option><option> Water Brush </option><option>
+                Waterfall
+              </option><option> Wellfleet </option><option>
+                Wendy One
+              </option><option> Whisper </option><option>
+                WindSong
+              </option><option> Wire One </option><option>
+                Work Sans
+              </option><option> Xanh Mono </option><option>
+                Yaldevi
+              </option><option> Yanone Kaffeesatz </option><option>
+                Yantramanav
+              </option><option> Yatra One </option><option>
+                Yellowtail
+              </option><option> Yeon Sung </option><option>
+                Yeseva One
+              </option><option> Yesteryear </option><option>
+                Yomogi
+              </option><option> Yrsa </option><option>
+                Yuji Boku
+              </option><option> Yuji Mai </option><option>
+                Yuji Syuku
+              </option><option> Yusei Magic </option><option>
+                ZCOOL KuaiLe
+              </option><option> ZCOOL QingKe HuangYou </option><option>
+                ZCOOL XiaoWei
+              </option><option> Zen Antique </option><option>
+                Zen Antique Soft
+              </option><option> Zen Dots </option><option>
+                Zen Kaku Gothic Antique
+              </option><option> Zen Kaku Gothic New </option><option>
+                Zen Kurenaido
+              </option><option> Zen Loop </option><option>
+                Zen Maru Gothic
+              </option><option> Zen Old Mincho </option><option>
+                Zen Tokyo Zoo
+              </option><option> Zeyada </option><option>
+                Zhi Mang Xing
+              </option><option> Zilla Slab </option><option>
+                Zilla Slab Highlight
+              </option></select
+            >
