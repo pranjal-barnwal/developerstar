@@ -7,6 +7,11 @@
 
   import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
     import { onMount } from "svelte";
+  import Text2ico from "./components/Text2ico.svelte";
+  import Img2ico from "./components/Img2ico.svelte";
+  import FaviconJS from "./favicon.js/favicon.mjs";
+  import Emoji2ico from "./components/Emoji2ico.svelte";
+
 
   let interns = [];
   
@@ -124,7 +129,7 @@
 </script>
 
 <main>
-  {#each interns as intern}
+  <!-- {#each interns as intern}
     <p>{intern.name}</p>
   {/each}
   <button on:click={addIntern}>Add Intern</button>
@@ -140,7 +145,12 @@
     <button on:click={register}>Register</button>
     <button on:click={login}>Login</button>
     <button on:click={logout}>Logout</button>
-  </div>
+  </div> -->
+
+  <Text2ico/>
+  <!-- <Img2ico/> -->
+  <!-- <Emoji2ico/> -->
+  
 </main>
 
 <style>
