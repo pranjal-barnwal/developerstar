@@ -5,11 +5,12 @@
   import { onSnapshot } from "firebase/firestore";
   import { setDoc, addDoc, serverTimestamp, updateDoc, increment, deleteDoc } from "firebase/firestore"; 
   import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
-    import { onMount } from "svelte";
+  import { onMount } from "svelte";
   import Text2ico from "./components/Text2ico.svelte";
   import Img2ico from "./components/Img2ico.svelte";
   import FaviconJS from "./favicon.js/favicon.mjs";
   import Emoji2ico from "./components/Emoji2ico.svelte";
+  import Home from "./components/Home.svelte";
 
 
   let interns = [];
@@ -146,7 +147,8 @@
     <button on:click={logout}>Logout</button>
   </div> -->
 
-  <Text2ico/>
+  <Home/>
+  <!-- <Text2ico/> -->
   <!-- <Img2ico/> -->
   <!-- <Emoji2ico/> -->
   
