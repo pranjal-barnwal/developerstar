@@ -147,10 +147,10 @@
     <button on:click={logout}>Logout</button>
   </div> -->
 
-  <Home/>
+  <!-- <Home/> -->
   <!-- <Text2ico/> -->
   <!-- <Img2ico/> -->
-  <!-- <Emoji2ico/> -->
+  <Emoji2ico/>
   
 </main>
 
