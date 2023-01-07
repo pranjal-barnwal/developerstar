@@ -4,7 +4,6 @@
   import { collection, query, where, getDocs, orderBy, limit } from "firebase/firestore";
   import { onSnapshot } from "firebase/firestore";
   import { setDoc, addDoc, serverTimestamp, updateDoc, increment, deleteDoc } from "firebase/firestore"; 
-
   import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
     import { onMount } from "svelte";
   import Text2ico from "./components/Text2ico.svelte";
