@@ -173,7 +173,7 @@
   </div> -->
 
   <!-- <Home/> -->
-  <Text2ico/>
+  <!-- <Text2ico/> -->
   <!-- <Img2ico/> -->
   <!-- <Emoji2ico/> -->
   
