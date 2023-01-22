@@ -6,13 +6,13 @@ import { getAuth } from "firebase/auth";
 
 // firebase config for: developerstar-favicon           // hosted on: Pranjal's account
 const firebaseConfig = {
-    apiKey: "AIzaSyDoRaot5L0WGwd8oD0YOTlaHwWJPB5BBv0",
-    authDomain: "developerstar-favicon.firebaseapp.com",
-    projectId: "developerstar-favicon",
-    storageBucket: "developerstar-favicon.appspot.com",
-    messagingSenderId: "479376485450",
-    appId: "1:479376485450:web:4404c69a9c1cc78761cab3",
-    measurementId: "G-7YG802JEXE"
+    apiKey: "AIzaSyDwbkfLXmS86MRFNmigCHItObgfaod-JXk",
+    authDomain: "favicon-developerstar.firebaseapp.com",
+    projectId: "favicon-developerstar",
+    storageBucket: "favicon-developerstar.appspot.com",
+    messagingSenderId: "984657225892",
+    appId: "1:984657225892:web:3ba3c21331e8d6bc3ade31",
+    measurementId: "G-8VDGF2TDKQ"
 };
 
 export const app = initializeApp(firebaseConfig);
