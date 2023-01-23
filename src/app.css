@@ -10,7 +10,7 @@ main {
   font-family: "Basier circle", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  color: #000;
+  color: #212121;
 }
 
 h2,
@@ -34,4 +34,24 @@ h2 {
 .head_part {
   padding: 20px 80px;
   text-align: left;
+}
+
+
+
+
+/* Scroll Bar */
+::-webkit-scrollbar{
+  width: 0.60rem;
+  /* background-color: var(--scroll-bar-color); */
+  background-color: rgb(70, 52, 52);
+  /* border-radius: .5rem; */
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #898989;
+  border-radius: .5rem;
+  box-shadow: 0 0 34px white;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: var(--text-color-light);
 }

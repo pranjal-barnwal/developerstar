@@ -304,12 +304,16 @@
 
         <pre class="html_codes">
   &lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt;
+  
   &lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"&gt;
+  
   &lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"&gt;
+
   &lt;link rel="manifest" href="/site.webmanifest"&gt;
   </pre>
-        <a class="blue_button" on:click={copyCode} ><i class="icon fa-regular fa-clipboard"/> Copy</a
-        >
+    <div class="copy_html_btn">
+      <a class="blue_button" on:click={copyCode} ><i class="icon fa-regular fa-clipboard"/> Copy</a>
+    </div>
       </div>
     </div>
   </section>
@@ -342,16 +346,16 @@
         Next, select the shape of the background. There are three simple shapes
         available: square, circle, and rounded. These are the most common shapes
         used to generate a favicon. You can see examples of these shapes with <a
-          href="https://www.google.com"
+          href="https://producthunt.com/"
           class="faq_link">ProductHunt</a
-        >, <a href="https://www.google.com" class="faq_link">IndieHackers</a>,
-        and <a href="https://www.google.com" class="faq_link">HackerNews</a>.
+        >, <a href="https://indiehackers.com/" class="faq_link">IndieHackers</a>,
+        and <a href="https://news.ycombinator.com/" class="faq_link">HackerNews</a>.
       </p>
 
       <h3 class="faq_head">Selecting the font for your favicon</h3>
       <p class="faq_para">
-        The favicon generator uses <a
-          href="https://www.google.com"
+        For now we are having good range of fonts and later we are adding integration with <a
+          href="https://fonts.google.com"
           class="faq_link">Google Fonts</a
         > which has 800+ fonts available. This is useful to match the font used on
         your own website. In the future there will be a dedicated font page to help
@@ -367,7 +371,7 @@
         Otherwise you can use some of the colors that we suggest using the color
         picker below each input box. One cool feature is that you can use
         transparent backgrounds. Simply type "transparent" into the background
-        color box. <a href="https://www.google.com" class="faq_link"
+        color box. <a href="https://favicon.io/favicon-generator/" class="faq_link"
           >Here's an example of a favicon generated with a transparent
           background.</a
         >
@@ -387,6 +391,8 @@
   }
 
   .banner {
+    padding-top: 90px;
+    padding-bottom: 90px;
     background: black;
     color: #fff;
   }
@@ -481,6 +487,7 @@
 
   .generator_head {
     padding-top: 20px;
+    padding-bottom: 20px;
     font-size: 1.8rem;
     font-weight: bold;
     color: #363636;
@@ -561,11 +568,10 @@
   }
 
   .html_codes {
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin: 20px;
     background: #ededed;
     border-radius: 12px;
-    padding: 15px;
+    padding: 30px 15px;
   }
   .install .blue_button {
     display: inline-block;
@@ -586,8 +592,9 @@
     color: #4a4a4a;
   }
   .faq_para {
-    font-size: 0.93rem;
-    color: #4a4a4a;
+    font-size: 0.9rem;
+    color: #5a5a5a;
+    letter-spacing: .012rem;
   }
 
   .faq_link {
@@ -597,4 +604,60 @@
   .faq_link:hover {
     color: #001b92;
   }
+
+
+
+
+
+
+  @media screen and (max-width: 700px){
+    .banner_para{
+      max-width: 100%;
+    }
+
+    .generator_head{
+      font-size: 1.4rem;
+    }
+    
+    .flexbox_generator{
+      flex-direction: column;
+    }
+
+    .control{
+      width: 100%;
+    }
+
+    .preview{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .flexed{
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .faq .box, .install .box {
+      max-width: 100%;
+    }
+
+    .blue_button{
+      display: inline-block;
+    }
+    .copy_html_btn{
+      display: flex;
+      justify-content: center;
+    }
+    
+  }
+
+  .html_codes{
+    white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word; 
+  }
+    
+    
 </style>

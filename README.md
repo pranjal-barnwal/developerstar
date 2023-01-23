@@ -39,9 +39,9 @@ Favicon Generator, <a href="https://favicon-developerstar.web.app" target="_blan
 
 ## Features
 
-**📖 Multi-Page Layout**
+**🌐 Open-Source**
 
-**🎨 Styled with React-Bootstrap and Css with easy to customize colors**
+**📖 Multi-Page Layout**
 
 **📱 Fully Responsive**
 <hr/>
@@ -53,7 +53,7 @@ Clone down this repository. You will need `node.js` and `git` installed globally
 ## **🛠 Installation and Setup Instructions**
 1. Installation: `npm install`
 
-2. In the project directory, you can run: `npm run build`
+2. In the project directory, you can run: `npm run dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
@@ -66,6 +66,6 @@ You will find all the components used and you can edit your information accordin
 
 ## **Show your support**
 
-Give a ⭐ if you like this website!
+Hit the ⭐ if you liked this website!
 
-<img src="https://media.giphy.com/media/mGcNjsfWAjY5AEZNw6/giphy.gif" width="100">
+<img src="https://media.giphy.com/media/mGcNjsfWAjY5AEZNw6/giphy.gif" width="80">
