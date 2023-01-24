@@ -5,7 +5,7 @@
     <Router>
         <nav>
             <div class="logo">
-                <img src='./logo.png' alt="#"/>
+                <a href="/" use:link><img src='./logo.png' alt="#"/></a>
                 <div class="hamBurger navBar">
                     <div class="slice"></div>
                     <div class="slice"></div>

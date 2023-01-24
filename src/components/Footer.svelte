@@ -1,21 +1,25 @@
+<script>
+    import {Router, link} from 'svelte-navigator';
+
+</script>
 <main>
   <footer class="footer">
     <div class="footer-left">
-      <a href="/" class="logo">
-        <img src="/public/logo.png" alt="Logo" />
+      <a href="/"  use:link class="logo">
+        <img src="/logo.png" alt="Logo" />
       </a>
 
       <p class="footer-links">
         <a href="/">Home</a>
-        .
-        <a href="/">Blog</a>
-        .
+        &nbsp;
+        <a href="/tutorials" use:link>Tutorials</a>
+        &nbsp;
         <a href="/">Pricing</a>
-        .
+        &nbsp;
         <a href="/">About</a>
-        .
+        &nbsp;
         <a href="/">Faq</a>
-        .
+        &nbsp;
         <a href="/">Contact</a>
       </p>
 
@@ -56,7 +60,7 @@
   }
 
   .footer {
-    background-color: #292c2f;
+    background-color: #eaeaea;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     width: 100%;
@@ -83,7 +87,7 @@
   }
 
   .footer .footer-links {
-    color: #ffffff;
+    color: #4a4a4a;
     margin: 20px 0 12px;
     padding: 0;
   }
@@ -126,7 +130,7 @@
 
   .footer .footer-center p {
     display: inline-block;
-    color: #ffffff;
+    color: #4a4a4a;
     vertical-align: middle;
     margin: 0;
   }
@@ -157,7 +161,7 @@
 
   .footer .footer-company-about span {
     display: block;
-    color: #ffffff;
+    color: #33383b;
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 20px;
