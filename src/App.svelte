@@ -18,6 +18,7 @@
   import Img2ico from './components/Img2ico.svelte';
   import Text2ico from './components/Text2ico.svelte';
   import Navigation from './components/Navbar.svelte';
+  import Footer from './components/Footer.svelte';
 
   
   
@@ -153,6 +154,7 @@
         <OneEmoji id codes/>
     </Route>
   </Router>
+  <Footer/>
   
   <!-- {#each interns as intern}
     <p>{intern.name}</p>
