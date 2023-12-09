@@ -27,7 +27,7 @@
     <a href="https://github.com/pranjal-barnwal/developerstar/issues">Request Feature</a>
 </h3>
 
-## Contrubutors
+## Contributors
 <a href="https://github.com/pranjal-barnwal/developerstar/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=pranjal-barnwal/developerstar" />
 </a>
